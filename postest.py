@@ -1,43 +1,56 @@
 import math
 
-print('\nSebelum menggunakan operasi Kenalan dulu yuk')
-nama = input('Kalo boleh tau, siapa namamu?: ')
-nim = input('NIM kamu berapaa nih?: ') 
-prodi_angkatan = input('Terakhir deh, dari prodi dan angkatan berapa?: ') 
-print(f'\nMaaf banyak tanya yaa, selamat datang \n{nama}\n{nim}\n{prodi_angkatan}\nSelamat menghitung!!')
+print('\nLogin')
+nama = input('Masukan nama  : ')
+nim = input('Masukan NIM   : ') 
+prodi = input('Masukan prodi : ') 
+print(f'\nData pengguna\n{nama}\n{nim}\n{prodi}')
 
-print('='*25)
+print('='*40)
+
+print(f'Selamat datang {nama}, selamat menghitung!!')
+
+print('='*40)
 print('Temukan jawabanmu di sini!!')
 print(' a. Bola')
 print(' b. Tabung')
 print(' c. Limas segitiga')
-print('='*25)
+print('='*40)
 
 bangun_ruang = input('Mau ngitung bangun ruang apa nih?? (a/b/c): ')
 
 
 if bangun_ruang == 'a':
     jari_jari = float(input('Masukan jari-jari bola: '))
-    volume = (4/3) * math.pi * (jari_jari ** 3)
-    print(f"Bola dengan jari jari {jari_jari} cm memiliki volume sebesar {volume} kubik satuan")
+    if jari_jari <= 0 :
+        print('Tidak ada jari-jari yang negatif atau nol, mulai ulang programnya')
+    else:
+        volume = (4/3) * math.pi * (jari_jari ** 3)
+        print(f'Bola dengan jari jari {jari_jari} cm memiliki volume sebesar {volume:.2f} kubik satuan')
     
 elif bangun_ruang == 'b' :
     tinggi = float(input('Masukan tinggi tabung: '))
     jari_jari = float(input('Masukan jari-jari: '))
-    volume = math.pi * (jari_jari * 2) * tinggi
-    print(f"Tabung dengan tinggi {tinggi} cm dan jari-jari {jari_jari} cm, memiliki volume sebesar {volume} kubik satuan")
+    if jari_jari <= 0 or tinggi <= 0 :
+        print('Tidak ada jari-jari dan tinggi yang negatif atau nol, mulai ulang prohramnya')
+    else:
+        volume = math.pi * (jari_jari * 2) * tinggi
+        print(f'Tabung dengan tinggi {tinggi} cm dan jari-jari {jari_jari} cm, memiliki volume sebesar {volume:.2f} kubik satuan')
 
 elif bangun_ruang == 'c' :
     tinggi_segitiga = float(input('Masukan tinggi segitiga: '))
     alas_segitiga = float(input('Masukan alas segitiga: '))
-    
-    luas_alas = (1/2) * alas_segitiga * tinggi_segitiga
-    
+    if tinggi_segitiga <= 0 or alas_segitiga <= 0:
+        print('Tidak ada tinggi dan alas yang negatif atau nol, mulai ulang programmnya')
+    else:
+        luas_alas = (1/2) * alas_segitiga * tinggi_segitiga
     tinggi_limas = float(input('Masukan tinggi tabung: '))
+    if tinggi_limas <1 :
+        print('Tidak ada tinggi kurang dari 1, mulai ulang progammnya')
+    else:
+        volume = (1/3) * luas_alas * tinggi_limas
     
-    volume = (1/3) * luas_alas * tinggi_limas
-    
-    print(f"Limas segitiga dengan tinggi segitiga {tinggi_segitiga} cm dan alas segitiga {alas_segitiga} cm, memiliki volume sebesar {volume} cm kubik satuan")
+    print(f'Limas segitiga dengan tinggi segitiga {tinggi_segitiga} cm dan alas segitiga {alas_segitiga} cm, memiliki volume sebesar {volume:.2f} cm kubik satuan')
     
 else:
     print('Yang kamu masukin kayanya salah deh, coba cek lagi!!')
