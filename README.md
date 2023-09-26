@@ -1,6 +1,6 @@
 # POSTEST 1, Kalkulator Volume Bangun Ruang
-Nama: Muhammad Hisyam Nurgoho
-NIM : 2309116020
+###### Nama: Muhammad Hisyam Nurgoho
+###### NIM : 2309116020
 
 ## Flowchart Kalkulator Bangun Ruang
 ![alt text](https://github.com/jey41/postest_praktikum_daspro/blob/main/flowchart%20kalkulator%20bangun%20ruang.png?raw=true)
